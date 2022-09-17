@@ -1,0 +1,41 @@
+app:
+  id: provider
+server:
+  port: 8080
+
+spring:
+  application:
+    ## 应用名
+    name: provider
+  ## nacos服务地址
+  cloud:
+    nacos:
+      discovery:
+        username: nacos
+        password: nacos
+        server-addr: 192.168.134.134:8848
+        namespace: public
+        service: provider
+info:
+  app:
+    version: 1.0
+    name: orderservice   #/actuator/info 自定义的info端点 否则是空的
+    app.name: orderservice-microcloud
+    company.name: www.hopshine.net
+    build.artifactId: {$project.artifactId$}
+    build.version:  {$project.version$}
+
+management:
+  info:
+    env:
+      enabled: true
+  endpoint:
+    shutdown:
+      enabled: false
+  endpoints:
+    web:
+      exposure:
+        include:
+          - "*"
+#自定义参数
+providerName: provider
