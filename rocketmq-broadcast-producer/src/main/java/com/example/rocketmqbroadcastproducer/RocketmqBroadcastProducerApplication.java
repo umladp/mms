@@ -1,5 +1,6 @@
 package com.example.rocketmqbroadcastproducer;
 
+import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.apache.rocketmq.common.message.MessageConst;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -21,6 +22,7 @@ import java.util.function.Consumer;
 import java.util.function.Supplier;
 
 @SpringBootApplication
+@EnableDubbo
 //@EnableBinding({ Source.class, Sink.class })
 public class RocketmqBroadcastProducerApplication   {
     public static void main(String[] args) {
